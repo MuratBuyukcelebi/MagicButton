@@ -1,0 +1,90 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #046726;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.magic {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-title {
+    margin-bottom: 210px;
+    z-index: 3;
+    font-size: 36px;
+    color: #ffff;
+    font-weight: bolder;
+  }
+  &-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+//https://codepen.io/peterhry/pen/kBoorG
+.the-button {
+  border-radius: 50%;
+  box-shadow: 0 0 .5em rgba(0,0,0,1),
+  inset 0 .25em .3em rgba(255,255,255,.3),
+  inset 0 -.25em .3em rgba(0,0,0,.5);
+  cursor: pointer;
+  font: inherit;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  border: none;
+
+  &:before {
+    background: linear-gradient(to bottom,
+    rgba(255,255,255,0.14) 0%,
+    rgba(255,255,255,0) 50%,
+    rgba(255,255,255,0) 100%);
+    border-radius: 50%;
+    content: " ";
+    height: 80%;
+    left: 10%;
+    position: absolute;
+    top: 10%;
+    width: 80%;
+  }
+  &:active {
+    box-shadow: 0 0 .5em rgba(0,0,0,1),
+    inset 0 .1em .3em rgba(0,0,0,.5),
+    inset 0 -.1em .3em rgba(0,0,0,.5);
+  }
+  &:active:before {
+    top: 11.5%;
+  }
+}
+
+.button-frame {
+  background: #cc0000;
+  border-radius: 50%;
+  box-shadow: 0 0 8em rgba(189,246,163,.75),
+  0 0 8em rgba(189,246,163,.75),
+  0 0 .25em rgba(0,0,0,.9),
+  inset 0 .25em .125em rgba(255,255,255,.3),
+  inset 0 -.25em .125em rgba(0,0,0,.3);
+  display: block;
+  height: 6.8em;
+  margin: -3.4em auto 0;
+  padding: .55em;
+  position: relative;
+  top: 50%;
+  width: 6.8em;
+  z-index: 20;
+}
+
+.plastic {
+  background: linear-gradient(to bottom,  #b01e1e 0%,#920f0f 100%);
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Title</title>
+</head>
+<body>
+<div class="magic">
+  <div class="magic-title">🧐🤔</div>
+  <div class="magic-button">
+    <!--https://codepen.io/peterhry/pen/kBoorG-->
+    <div class="button-frame plastic">
+      <button onclick="playSound()" class="the-button plastic"></button>
+    </div>
+  </div>
+</div>
+<audio id="audio" src="sounds/1.mp3"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/less" ></script>
+<script>
+  function playSound() {
+    document.getElementById('audio').play()
+  }
+</script>
+</body>
+</html>
