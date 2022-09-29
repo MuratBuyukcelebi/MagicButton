@@ -13,14 +13,15 @@
     <div class="magic-button">
       <!--https://codepen.io/peterhry/pen/kBoorG-->
       <div class="button-frame plastic">
-        <button onclick="playSound()" class="the-button plastic"></button>
+        <button ondblclick="stopSound()" onclick="playSound()" class="the-button plastic"></button>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/less" ></script>
   <script>
     let audioList = ""
-    let audioNumber = 1
+    let audioNumber = 20
+    let audioActive = false
     for (let i = 0; i <= audioNumber; i++ ) {
       audioList += `<audio id="${i}" src="sounds/${i}.mp3"></audio>`
     }
@@ -28,8 +29,15 @@
     body.insertAdjacentHTML('beforeend', audioList)
 
     function playSound() {
+      audioActive = !audioActive
       let bigMindMath = Math.floor(Math.random() * audioNumber)
-      document.getElementById(bigMindMath).play()
+      if (audioActive) {
+        document.getElementById(bigMindMath).play()
+      } else {
+        for (let i = 0; i <= audioNumber; i++ ) {
+          document.getElementById(i).pause();
+        }
+      }
     }
   </script>
 </body>
