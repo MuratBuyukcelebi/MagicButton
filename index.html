@@ -7,22 +7,29 @@
   <title>Title</title>
 </head>
 <body>
-<div class="magic">
-  <div class="magic-title">🧐🤔</div>
-  <div class="magic-button">
-    <!--https://codepen.io/peterhry/pen/kBoorG-->
-    <div class="button-frame plastic">
-      <button onclick="playSound()" class="the-button plastic"></button>
+  <div class="magic">
+    <div class="magic-title">🧐🤔</div>
+    <div class="magic-button">
+      <!--https://codepen.io/peterhry/pen/kBoorG-->
+      <div class="button-frame plastic">
+        <button onclick="playSound()" class="the-button plastic"></button>
+      </div>
     </div>
   </div>
-</div>
-<audio id="audio" src="sounds/1.mp3"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+  <script>
+    let audioList = ""
+    let audioNumber = 1
+    for (let i = 0; i <= audioNumber; i++ ) {
+      audioList += `<audio id="${i}" src="sounds/${i}.mp3"></audio>`
+    }
+    const body = document.querySelector("body")
+    body.insertAdjacentHTML('beforeend', audioList)
 
-<script src="https://cdn.jsdelivr.net/npm/less" ></script>
-<script>
-  function playSound() {
-    document.getElementById('audio').play()
-  }
-</script>
+    function playSound() {
+      let bigMindMath = Math.floor(Math.random() * audioNumber)
+      document.getElementById(bigMindMath).play()
+    }
+  </script>
 </body>
 </html>
