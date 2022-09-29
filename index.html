@@ -33,6 +33,13 @@
       audioActive = !audioActive
       if (audioActive) {
         document.getElementById(bigMindMath).play()
+        let audioDuration = document.getElementById(bigMindMath).duration
+        setTimeout(audioDurationEnd, (audioDuration * 1000))
+        function audioDurationEnd() {
+          console.log(audioDuration)
+          audioActive = !audioActive
+          bigMindMath = Math.floor(Math.random() * audioNumber)
+        }
       } else {
         document.getElementById(bigMindMath).pause();
         document.getElementById(bigMindMath).currentTime = 0;
