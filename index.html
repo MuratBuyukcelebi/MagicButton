@@ -36,6 +36,7 @@
       } else {
         for (let i = 0; i <= audioNumber; i++ ) {
           document.getElementById(i).pause();
+          document.getElementById(i).currentTime = 0;
         }
       }
     }
