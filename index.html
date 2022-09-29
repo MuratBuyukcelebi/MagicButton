@@ -34,8 +34,8 @@
     function playSound() {
       audioActive = !audioActive
       if (audioActive) {
-        document.getElementById(bigMindMath).play()
         let audioDuration = document.getElementById(bigMindMath).duration
+        document.getElementById(bigMindMath).play()
         audioSetTimeout = setTimeout(audioDurationEnd, (audioDuration * 1000))
 
         function audioDurationEnd() {
