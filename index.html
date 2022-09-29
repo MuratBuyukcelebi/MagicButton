@@ -29,18 +29,19 @@
     body.insertAdjacentHTML('beforeend', audioList)
 
     let bigMindMath = Math.floor(Math.random() * audioNumber)
+    let audioSetTimeout;
     function playSound() {
       audioActive = !audioActive
       if (audioActive) {
         document.getElementById(bigMindMath).play()
         let audioDuration = document.getElementById(bigMindMath).duration
-        setTimeout(audioDurationEnd, (audioDuration * 1000))
+        audioSetTimeout = setTimeout(audioDurationEnd, (audioDuration * 1000))
         function audioDurationEnd() {
-          console.log(audioDuration)
           audioActive = !audioActive
           bigMindMath = Math.floor(Math.random() * audioNumber)
         }
       } else {
+        clearTimeout(audioSetTimeout);
         document.getElementById(bigMindMath).pause();
         document.getElementById(bigMindMath).currentTime = 0;
         bigMindMath = Math.floor(Math.random() * audioNumber)
