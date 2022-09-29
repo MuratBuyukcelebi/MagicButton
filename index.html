@@ -28,16 +28,15 @@
     const body = document.querySelector("body")
     body.insertAdjacentHTML('beforeend', audioList)
 
+    let bigMindMath = Math.floor(Math.random() * audioNumber)
     function playSound() {
       audioActive = !audioActive
-      let bigMindMath = Math.floor(Math.random() * audioNumber)
       if (audioActive) {
         document.getElementById(bigMindMath).play()
       } else {
-        for (let i = 0; i <= audioNumber; i++ ) {
-          document.getElementById(i).pause();
-          document.getElementById(i).currentTime = 0;
-        }
+        document.getElementById(bigMindMath).pause();
+        document.getElementById(bigMindMath).currentTime = 0;
+        bigMindMath = Math.floor(Math.random() * audioNumber)
       }
     }
   </script>
