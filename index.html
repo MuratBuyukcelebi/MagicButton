@@ -20,22 +20,24 @@
   <script src="https://cdn.jsdelivr.net/npm/less" ></script>
   <script>
     let audioList = ""
+    let audioSetTimeout;
     let audioNumber = 20
     let audioActive = false
+    let bigMindMath = Math.floor(Math.random() * audioNumber)
+    const body = document.querySelector("body")
+
     for (let i = 0; i <= audioNumber; i++ ) {
       audioList += `<audio id="${i}" src="sounds/${i}.mp3"></audio>`
     }
-    const body = document.querySelector("body")
     body.insertAdjacentHTML('beforeend', audioList)
 
-    let bigMindMath = Math.floor(Math.random() * audioNumber)
-    let audioSetTimeout;
     function playSound() {
       audioActive = !audioActive
       if (audioActive) {
         document.getElementById(bigMindMath).play()
         let audioDuration = document.getElementById(bigMindMath).duration
         audioSetTimeout = setTimeout(audioDurationEnd, (audioDuration * 1000))
+
         function audioDurationEnd() {
           audioActive = !audioActive
           bigMindMath = Math.floor(Math.random() * audioNumber)
